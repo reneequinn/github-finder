@@ -2,7 +2,7 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #dc3545;
+  --primary-color: #6a1b9a;
   --dark-color: #333333;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -374,6 +374,10 @@ table th {
 
 .navbar .welcome span {
   margin-right: 0.6rem;
+}
+
+.navbar i {
+  margin-right: 0.75rem;
 }
 
 /* Mobile Styles */
