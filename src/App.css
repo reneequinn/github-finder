@@ -40,6 +40,10 @@ img {
   width: 100%;
 }
 
+i.fas {
+  margin-right: 1rem;
+}
+
 /* Utilities */
 .container {
   max-width: 1100px;
