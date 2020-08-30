@@ -1,22 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Navbar = ({ icon, title }) => {
+  const [isActive, setIsActive] = useState(false);
+  const toggleMenu = () => {
+    setIsActive(!isActive);
+  };
+
   return (
-    <nav className='navbar bg-primary'>
-      <h1>
-        <i className={icon}></i>
-        {title}
-      </h1>
-      <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/about'>About</Link>
-        </li>
-      </ul>
+    <nav className='navbar is-dark px-4'>
+      <div className='navbar-brand'>
+        <Link to='/' className='navbar-item is-size-4'>
+          <i className={`mr-2 ${icon}`}></i>
+          <h1 className='has-text-weight-semibold'>{title}</h1>
+        </Link>
+        <button
+          className={`navbar-burger button is-dark ${
+            isActive ? 'is-active' : ''
+          }`}
+          aria-label='menu'
+          aria-expanded='false'
+          onClick={toggleMenu}
+        >
+          <span aria-hidden='true'></span>
+          <span aria-hidden='true'></span>
+          <span aria-hidden='true'></span>
+        </button>
+      </div>
+      <div className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
+        <div className='navbar-end'>
+          <Link to='/' className='navbar-item'>
+            Home
+          </Link>
+          <Link to='/about' className='navbar-item'>
+            About
+          </Link>
+        </div>
+      </div>
     </nav>
   );
 };
