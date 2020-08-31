@@ -37,6 +37,9 @@ const User = ({ match }) => {
     <Fragment>
       <div className='mt-4 has-text-left'>
         <Link to='/' className='button is-link'>
+          <span className='icon mr-1 is-small'>
+            <i className='fas fa-chevron-left'></i>
+          </span>
           Back To Search
         </Link>
       </div>
@@ -62,11 +65,11 @@ const User = ({ match }) => {
             </div>
             <div className='column is-three-quarters'>
               <div className='level mb-4'>
-                <div className='level-left is-italic has-text-white-bis is-size-5'>
+                <div className='level-left is-italic is-size-5'>
                   <p className='level-item has-text-weight-semibold'>{login}</p>
                   <p className='level-item'>{location}</p>
                 </div>
-                <div className='level-right'>
+                <div className='level-right is-block-mobile has-text-centered'>
                   <span className='tag level-item is-dark mr-2'>
                     Followers: {followers}
                   </span>
@@ -81,7 +84,7 @@ const User = ({ match }) => {
                   </span>
                 </div>
               </div>
-              <div>
+              <div className='has-text-centered-mobile'>
                 {bio && (
                   <Fragment>
                     <p>{bio}</p>

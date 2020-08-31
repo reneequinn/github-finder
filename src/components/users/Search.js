@@ -15,7 +15,7 @@ const Search = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (text === '') {
-      alertContext.setAlert('Please enter something', 'light');
+      alertContext.setAlert('Please enter something');
     } else {
       githubContext.searchUsers(text);
       setText('');
@@ -25,7 +25,10 @@ const Search = () => {
   return (
     <div>
       <form onSubmit={onSubmit} className='mt-4'>
-        <label htmlFor='text' className='label has-text-white has-text-left'>
+        <label
+          htmlFor='text'
+          className='label has-text-white-ter has-text-left'
+        >
           Search for user
         </label>
         <input
@@ -34,7 +37,7 @@ const Search = () => {
           placeholder='Enter username'
           value={text}
           onChange={onChange}
-          className='input has-background-dark has-text-white'
+          className='input has-background-black-ter has-text-white-ter'
         />
         <input
           type='submit'
