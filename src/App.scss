@@ -1,7 +1,13 @@
 $input-placeholder-color: #fff;
+$link-hover: hsl(217, 71%, 45%);
+$link-active: hsl(217, 71%, 45%);
 @import '~bulma';
 
 body {
-  background: $black-ter;
+  background: $black-bis;
   min-height: 100vh;
+}
+
+.card-header {
+  align-items: center;
 }

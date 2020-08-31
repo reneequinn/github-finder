@@ -35,70 +35,89 @@ const User = ({ match }) => {
 
   return (
     <Fragment>
-      <Link to='/' className='btn btn-light'>
-        Back To Search
-      </Link>
-      Hireable:{' '}
-      {hireable ? (
-        <i className='fas fa-check text-success' />
-      ) : (
-        <i className='fas fa-times-circle text-danger' />
-      )}
-      <div className='card grid-2'>
-        <div className='all-center'>
-          <img
-            src={avatar_url}
-            alt={name}
-            className='round-img'
-            style={{ width: '150px' }}
-          />
-          <h1>{name}</h1>
-          <p>Location: {location}</p>
+      <div className='mt-4 has-text-left'>
+        <Link to='/' className='button is-link'>
+          Back To Search
+        </Link>
+      </div>
+      <div className='mt-4 has-text-left card has-background-dark'>
+        <div className='card-header px-4'>
+          <h2 className='card-header-title has-text-white is-size-3'>{name}</h2>
+          <span className='has-text-white px-4'>
+            Hireable{' '}
+            {hireable ? (
+              <i className='ml-2 fas fa-check has-text-success' />
+            ) : (
+              <i className='ml-2 fas fa-times-circle has-text-danger' />
+            )}
+          </span>
         </div>
-        <div>
-          {bio && (
-            <Fragment>
-              <h3>Bio</h3>
-              <p>{bio}</p>
-            </Fragment>
-          )}
-          <a href={html_url} className='btn btn-dark my-1'>
-            Visit GitHub Profile
-          </a>
-          <ul>
-            <li>
-              {login && (
-                <Fragment>
-                  <strong>Username: </strong>
-                  {login}
-                </Fragment>
-              )}
-            </li>
-            <li>
-              {company && (
-                <Fragment>
-                  <strong>Company: </strong>
-                  {company}
-                </Fragment>
-              )}
-            </li>
-            <li>
-              {blog && (
-                <Fragment>
-                  <strong>Website: </strong>
-                  <a href={blog}>{blog}</a>
-                </Fragment>
-              )}
-            </li>
-          </ul>
+
+        <div className='card-content px-4 has-text-white-bis has-background-black-ter'>
+          <div className='columns is-vcentered px-4 is-4'>
+            <div className='column is-one-quarter has-text-centered'>
+              <figure className='image is-128x128 is-inline-block'>
+                <img src={avatar_url} alt={name} className='is-rounded' />
+              </figure>
+            </div>
+            <div className='column is-three-quarters'>
+              <div className='level mb-4'>
+                <div className='level-left is-italic has-text-white-bis is-size-5'>
+                  <p className='level-item has-text-weight-semibold'>{login}</p>
+                  <p className='level-item'>{location}</p>
+                </div>
+                <div className='level-right'>
+                  <span className='tag level-item is-dark mr-2'>
+                    Followers: {followers}
+                  </span>
+                  <span className='tag level-item is-dark mr-2'>
+                    Following: {following}
+                  </span>
+                  <span className='tag level-item is-success has-text-black mr-2'>
+                    Public Repos: {public_repos}
+                  </span>
+                  <span className='tag level-item is-warning'>
+                    Public Gists: {public_gists}
+                  </span>
+                </div>
+              </div>
+              <div>
+                {bio && (
+                  <Fragment>
+                    <p>{bio}</p>
+                  </Fragment>
+                )}
+                <div className='level'>
+                  <ul className='has-text-white-bis my-4'>
+                    <li>
+                      {company && (
+                        <Fragment>
+                          <strong className='has-text-white'>Company: </strong>
+                          {company}
+                        </Fragment>
+                      )}
+                    </li>
+                    <li>
+                      {blog && (
+                        <Fragment>
+                          <strong className='has-text-white'>Website: </strong>
+                          <a href={blog} className=''>
+                            {blog}
+                          </a>
+                        </Fragment>
+                      )}
+                    </li>
+                  </ul>
+                  <a href={html_url} className='button is-link my-4'>
+                    Visit GitHub Profile
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div className='card text-center'>
-        <div className='badge badge-primary'>Followers: {followers}</div>
-        <div className='badge badge-success'>Following: {following}</div>
-        <div className='badge badge-light'>Public Repos: {public_repos}</div>
-        <div className='badge badge-dark'>Public Gists: {public_gists}</div>
-      </div>
+      <div className=''></div>
       <Repos repos={repos} />
     </Fragment>
   );
