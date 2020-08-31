@@ -24,23 +24,27 @@ const Search = () => {
 
   return (
     <div>
-      <form onSubmit={onSubmit} className='form'>
+      <form onSubmit={onSubmit} className='mt-4'>
+        <label htmlFor='text' className='label has-text-white has-text-left'>
+          Search for user
+        </label>
         <input
           type='text'
           name='text'
-          placeholder='Search Users...'
+          placeholder='Enter username'
           value={text}
           onChange={onChange}
+          className='input has-background-dark has-text-white'
         />
         <input
           type='submit'
           value='Search'
-          className='btn btn-dark btn-block'
+          className='button is-fullwidth is-link has-text-weight-bold my-3'
         />
       </form>
       {githubContext.users.length > 0 && (
         <button
-          className='btn btn-light btn-block'
+          className='button is-fullwidth is-dark has-text-weight-bold mt-2'
           onClick={githubContext.clearUsers}
         >
           Clear

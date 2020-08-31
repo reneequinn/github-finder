@@ -1,2 +1,7 @@
-@import 'bulma';
+$input-placeholder-color: #fff;
+@import '~bulma';
 
+body {
+  background: $black-ter;
+  min-height: 100vh;
+}
