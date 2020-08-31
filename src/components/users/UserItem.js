@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const UserItem = ({ user: { login, avatar_url } }) => {
   return (
     <div className='column is-one-quarter'>
-      <div className='card has-text-centered has-background-dark'>
+      <div className='card has-text-centered has-background-black-ter'>
         <div className='card-image pt-3'>
           <figure className='image is-inline-block is-128x128'>
             <img src={avatar_url} alt={login} className='is-rounded' />

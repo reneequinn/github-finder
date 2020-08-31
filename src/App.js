@@ -19,7 +19,7 @@ const App = () => {
         <Router>
           <div className='App'>
             <Navbar />
-            <div className='container pb-5 has-text-centered'>
+            <div className='container px-4 pb-5 has-text-centered'>
               <Alert />
               <Switch>
                 <Route exact path='/' component={Home} />
