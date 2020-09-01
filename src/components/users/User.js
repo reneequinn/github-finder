@@ -76,10 +76,10 @@ const User = ({ match }) => {
                   <span className='tag level-item is-dark mr-2'>
                     Following: {following}
                   </span>
-                  <span className='tag level-item is-success has-text-black mr-2'>
+                  <span className='tag level-item is-dark mr-2'>
                     Public Repos: {public_repos}
                   </span>
-                  <span className='tag level-item is-warning'>
+                  <span className='tag level-item is-dark'>
                     Public Gists: {public_gists}
                   </span>
                 </div>

@@ -44,7 +44,7 @@ const Navbar = ({ icon, title }) => {
 
 // default properties for when none are passed in
 Navbar.defaultProps = {
-  title: 'GitHub Finder',
+  title: 'GitHub User Finder',
   icon: 'fab fa-github',
 };
 
